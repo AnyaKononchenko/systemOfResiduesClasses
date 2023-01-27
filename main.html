@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="wrapper-header">
+        <div class='numberElement'><label for="number1">Enter A:</label><input id="number1" type="number"></div>
+        <div class='numberElement'><label for="number2">Enter B:</label><input id="number2" type="number"></div>
+        <div class='numberElement'><label for="modules">Enter modules:</label><input id="modules" placeholder="m1,m2,m3,...,mn"></div>
+        <div id="submit">Calculate</div>
+    </div>
+    <div class="wrapper-body">
+        <div class="numbersInSRC">
+            <div class="numberElement"><div>A in SRC:</div><div id="resultA"></div></div>
+            <div class="numberElement"><div>B in SRC:</div><div id="resultB"></div></div>
+            <div class="numbersInSRC-check">
+                <div class="numberElement"><label for ='SRCnumber'>Number in SRC:</label><input id="SRCnumber"></div>
+                <div class="numberElement"><div>back to decimal:</div><div id="SRCnumberInDecimal"></div></div>
+            </div>
+        </div>
+        <div class="resultsOfOperations">
+            <div class="numberElement">
+                <div>A + B =</div>
+                <div id = 'resultAplusB'></div>
+            </div>
+            <div class="numberElement">
+                <div>A - B =</div>
+                <div id = 'resultAminusB'></div>
+            </div>
+            <div class="numberElement">
+                <div>A * B =</div>
+                <div id = 'resultAmultiplyB'></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src='main.js'></script>
+</body>
+</html>
