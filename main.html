@@ -1,44 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>SOK</title>
+    <meta name="description" content="Number convertor into System of Residue Classes">
+    <meta name="keywords" content="residue classes, remainders, number theory, modulo">
+    <meta name="author" content="Anna Kononchenko">
     <link rel="stylesheet" href="style.css">
+    <title>SRC</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
-<body>
-<div class="wrapper">
-    <div class="wrapper-header">
-        <div class='numberElement'><label for="number1">Enter A:</label><input id="number1" type="number"></div>
-        <div class='numberElement'><label for="number2">Enter B:</label><input id="number2" type="number"></div>
-        <div class='numberElement'><label for="modules">Enter modules:</label><input id="modules" placeholder="m1,m2,m3,...,mn"></div>
-        <div id="submit">Calculate</div>
-    </div>
-    <div class="wrapper-body">
-        <div class="numbersInSRC">
-            <div class="numberElement"><div>A in SRC:</div><div id="resultA"></div></div>
-            <div class="numberElement"><div>B in SRC:</div><div id="resultB"></div></div>
-            <div class="numbersInSRC-check">
-                <div class="numberElement"><label for ='SRCnumber'>Number in SRC:</label><input id="SRCnumber"></div>
-                <div class="numberElement"><div>back to decimal:</div><div id="SRCnumberInDecimal"></div></div>
-            </div>
-        </div>
-        <div class="resultsOfOperations">
-            <div class="numberElement">
-                <div>A + B =</div>
-                <div id = 'resultAplusB'></div>
-            </div>
-            <div class="numberElement">
-                <div>A - B =</div>
-                <div id = 'resultAminusB'></div>
-            </div>
-            <div class="numberElement">
-                <div>A * B =</div>
-                <div id = 'resultAmultiplyB'></div>
-            </div>
-        </div>
 
+<body>
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <div class='number-element'>
+                <label for="number1">Enter A:</label>
+                <input id="number1" type="number">
+            </div>
+            <div class='number-element'>
+                <label for="number2">Enter B:</label>
+                <input id="number2" type="number">
+            </div>
+            <div class='number-element'>
+                <label for="modules">Enter modules:</label>
+                <input id="modules" placeholder="m1, m2, m3,..., mn">
+            </div>
+            <div>
+                <button id="submit">Calculate</button>
+            </div>
+        </div>
+        <div class="wrapper__content">
+            <section class="src-numbers">
+                <h2>Converted numbers</h2>
+                <div class="section__content">
+                    <div class="number-element">
+                        <div>A in SRC:</div>
+                        <div id="resultA" class="input-div"></div>
+                    </div>
+                    <div class="number-element">
+                        <div>B in SRC:</div>
+                        <div id="resultB" class="input-div"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="results">
+                <h2>Arithmetic operations</h2>
+                <div class="section__content">
+                    <div class="number-element">
+                        <div>A + B =</div>
+                        <div id='resultAplusB' class="input-div"></div>
+                    </div>
+                    <div class="number-element">
+                        <div>A - B =</div>
+                        <div id='resultAminusB' class="input-div"></div>
+                    </div>
+                    <div class="number-element">
+                        <div>A * B =</div>
+                        <div id='resultAmultiplyB' class="input-div"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="numbersInSRC-check" aria-describedby="check-desc">
+            <div class="number-element">
+                <label for='SRCnumber'>Number in SRC:</label>
+                <input id="SRCnumber" type="text">
+                <div>back to decimal:</div>
+                <div id="SRCnumberInDecimal" class="input-div"></div>
+            </div>
+            <div id="check-desc">Enter number in SRC to convert it back to decimal (given entered modules)</div>
+        </div>
+        <footer>
+            <article class="description">
+                <h2>What is that and how does it work?</h2>
+                <p>SRC stands for the System of Residues Classes and is used for
+                    representation of the non-positional notation. SRC allows implementation of the
+                    modular arithmetic operations such as addition, subtraction and multiplication.
+                    Its main features are: <br>
+                    &#183; independance of remainders;<br>
+                    &#183; equality of remainders;<br>
+                    &#183; small capacity of remainers. <br>
+                    These features allow us to provide a desirable reliability level of a targeted system, which is one
+                    of the most basic requirements to the modern real-time information handling systems. Number in SRC respresents as
+                    \([a_1, a_2, ... , a_n]\) where $$a_i=A-[A / m_i] m_i$$
+                    A range of numbers representation calculates as \(M=\prod_i^nm_i \) (\( i=\overline{1,n}\)), and \(n\) is a number of modules \([m_1, m_2, ... , m_n]\)
+                </p>
+            </article>
+        </footer>
     </div>
-</div>
-<script src='main.js'></script>
+    <script src='main.js'></script>
 </body>
+
 </html>

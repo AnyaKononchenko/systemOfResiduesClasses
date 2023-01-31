@@ -109,7 +109,7 @@ function calcSubModules(M, modules) {
     return res;
 }
 
-function calcCoefficients(modules, submodules) {//способ только для НОД()=1
+function calcCoefficients(modules, submodules) {//works only for GCD()=1 
     let res = [];
     for (let i = 0; i < modules.length; i++) {
         console.log('calculate for:', submodules[i], modules[i])

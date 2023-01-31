@@ -1,108 +1,242 @@
 *{
     margin: 0;
     padding: 0;
-    font-size: 1.1vw;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    border: none;
 }
+
 *::selection{
     background-color: black;
     color: white;
 }
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-}
+
 .wrapper{
-    border: 2px solid #b0cdd6;
-    border-radius: 1%;
-    width: 90vw;
-    height: 60vh;
-}
-.wrapper-header{
-    height: 15%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #b0cdd6;
-
-}
-.numberElement{
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.numberElement label, .numberElement div{
-    margin-right: 5%;
-}
-#submit{
-    width: 10%;
-    height: 50%;
-    border: 1px solid darkred;
-    line-height: 2.3vw;
-    text-align: center;
-}
-#submit:hover{
-    background-color: darkred;
-    color: white;
-    cursor: pointer;
-}
-#number1, #number2,
-#resultA, #resultB,
-#resultAplusB, #resultAmultiplyB, #resultAminusB,
-#SRCnumberInDecimal{
-    width: 40%;
-    margin-right: 0;
-    background-color: white;
-    border: 1px solid black;
-}
-
-.wrapper-body{
-    width: 100%;
-    height: 75%;
-}
-.numbersInSRC{
-    width: 100%;
-    height: 15%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 1px solid black;
-}
-.numbersInSRC .numberElement{
-    width: 25%;
-    margin-left: 2%;
-}
-.resultsOfOperations{
-    height: 60%;
+    border: 5px solid  #181D31;
+    border-radius: 10px;
+    width: 70vw;
+    min-height: 70vh;
+    margin: 15vh auto 5vh auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
 }
-.resultsOfOperations .numberElement{
-    height: 8%;
+
+.wrapper__header{
+    min-height: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    background-color: #181D31;
+    color: #F0E9D2;
+}
+
+.wrapper__header > .number-element > input{
+    width: 40%;
+    height: 1.7rem;
+    text-align: center;
+    padding: 2px;
+    opacity: 0.9;
+}
+
+.number-element, .wrapper__header>div:last-child{
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+}
+
+.wrapper__header>div:last-child{
+    padding: 0;
+    justify-content: center;
+}
+
+h2{
+    background-color: #678983;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color:  #181D31;
+}
+
+
+.wrapper__content{
+    display: flex;
+    width: 100%;
+}
+section{
+    width: 50%;
+    border: 6px solid #678983;
+}
+
+.section__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    min-height: 4rem;
+}
+
+.input-div{
+    border: 2px solid rgb(208, 200, 200);
+    width: 5rem;
+    height: 1.7rem;
+    text-align: center;
+    padding: 2px;
+}
+
+.number-element > div:first-child,
+.number-element > label{
+    margin-right: .5rem;
+}
+
+#submit{
+    width: 90%;
+    height: 70%;
+    border-radius: 10px;
+    background-color: #181D31;
+    color: #F0E9D2;
+    font-size: 1.3rem;
+    transition: all .3s linear;
+}
+#submit:hover{
+    color: #181D31;
+    background-color: #F0E9D2;
+    cursor: pointer;
 }
 
 .numbersInSRC-check{
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    padding: 1rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    background-color: #93d6a0;
+    gap: 1rem;
+    padding: 1rem;
+    border: 6px solid #678983;
 }
-.numbersInSRC-check .numberElement{
-    width: 50%;
-    height: 40%;
 
+.numbersInSRC-check > .number-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  
 }
 
 #SRCnumber{
-    width: 25%;
+    border: 2px solid rgb(208, 200, 200);
+    width: 8rem;
+    height: 1.7rem;
+    text-align: center;
+    padding: 2px;
 }
+
+
+
+#check-desc{
+    /* align-self: flex-end; */
+    color: rgb(53, 51, 51);
+    font-style: italic;
+    text-align: center;
+}
+
+.description{
+    min-height: 10rem;
+    padding: 1rem;
+    background-color: #F0E9D2;
+}
+
+.description > h2{
+    background-color: #E6DDC4;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description > p{
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+@media screen and (max-width: 1800px) {
+     section.results > .section__content{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .wrapper__header{
+        grid-template-columns: 2fr 1fr;
+        padding: 1rem;
+        gap: .5rem;
+    }
+
+    .wrapper__header > .number-element:nth-child(2),
+    .wrapper__header > .number-element:nth-child(3){
+        grid-column: 1 / span 1;
+    }
+
+    .wrapper__header > div:nth-child(4){
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrapper__header > div:nth-child(4) > button{
+        width: 60%;
+        height: 80%;
+    }
+
+    .wrapper{
+        width: 80vw;
+        margin-top: 10vh;
+    }
+    section.src-numbers > .section__content{
+        flex-direction: column;
+    }
+    
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .wrapper{
+        width: 90vw;
+        margin-top: 5vh;
+        min-height: 80vh;
+        /* margin: 15vh auto 0 auto; */
+    }
+    section > h2{
+        height: 3rem;
+        line-height: 3rem;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 991px) {
+
+    .wrapper{
+        width: 90vw;
+        margin-top: 5vh;
+    }
+    .wrapper__content{
+        flex-direction: column;
+    }
+    section{
+        width: 100%;
+    }
+
+    section > div > div > div{
+        font-size: 1.3rem;
+    }
+
+    section > h2{
+        font-size: 1.5rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    #SRCnumberInDecimal, #SRCnumber{
+        flex-basis: 50%;
+    }
+} 
